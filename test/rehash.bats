@@ -109,6 +109,7 @@ SH
 @test "sh-rehash in fish" {
   create_executable "r16b" "erl"
   SHELL=/usr/bin/fish run erlenv-sh-rehash
-  assert_success "hash -r 2>/dev/null ; or true"
+  # no rehash support
+  # assert_success "hash -r 2>/dev/null ; or true"
   assert [ -x "${ERLENV_ROOT}/shims/erl" ]
 }
